@@ -19,22 +19,59 @@
   </head>
   <body class="bg-biru2">
     <header>
-      <p class="font-silkscreen text-red-700 text-8xl font-extrabold text-center animate-bounce text-transparent bg-clip-text bg-gradient-to-r from-kuning3 to-abu4 mt-5">etch a sketch</p>
+      <p
+        class="font-silkscreen text-red-700 text-8xl font-extrabold text-center animate-bounce text-transparent bg-clip-text bg-gradient-to-r from-kuning3 to-abu4 mt-5"
+      >
+        etch a sketch :D
+      </p>
       <!-- white bar under header -->
       <div class="container mx-auto border border-white"></div>
     </header>
 
     <main>
-        <!-- menu buttons -->
-        <div class="container  border-white mx-auto mt-28 flex justify-around ">
-            <button class="bg-kuning3 text-5xl font-silkscreen border-4 border-biru2 border-dashed text-biru2 px-3.5 hover:bg-white active:bg-white focus:outline-none focus:ring focus:ring-kuning3">Black</button>
-            <button class="bg-kuning3 text-5xl font-silkscreen border-4 border-biru2 border-dashed text-biru2 px-3.5 hover:bg-white active:bg-white focus:outline-none focus:ring focus:ring-kuning3">Rainbow</button>
-            <button class="bg-kuning3 text-5xl font-silkscreen border-4 border-biru2 border-dashed text-biru2 px-3.5 hover:bg-white active:bg-white focus:outline-none focus:ring focus:ring-kuning3">Reset</button>
-            <div>
-                <input type="range" min="2" max="64" value="16" class="hover:bg-white active:bg-white focus:outline-none focus:ring focus:ring-kuning3">
-                <p class="text-center font-silkscreen text-4xl text-kuning3">16</p>
-            </div>
+      <!-- menu buttons -->
+      <div
+        class="container border-white mx-auto mt-16 flex justify-around w-1/2"
+      >
+        <button
+          class="bg-kuning3 text-3xl font-silkscreen border-4 border-biru2 border-dashed text-biru2 px-3.5 hover:bg-white active:bg-white focus:outline-none focus:ring focus:ring-kuning3"
+        >
+          Black
+        </button>
+        <button
+          class="bg-kuning3 text-3xl font-silkscreen border-4 border-biru2 border-dashed text-biru2 px-3.5 hover:bg-white active:bg-white focus:outline-none focus:ring focus:ring-kuning3"
+        >
+          Rainbow
+        </button>
+        <button
+          class="bg-kuning3 text-3xl font-silkscreen border-4 border-biru2 border-dashed text-biru2 px-3.5 hover:bg-white active:bg-white focus:outline-none focus:ring focus:ring-kuning3"
+        >
+          Reset
+        </button>
+        <div>
+          <input
+            type="range"
+            min="2"
+            max="64"
+            value="16"
+            class="hover:bg-white active:bg-white focus:outline-none focus:ring focus:ring-kuning3"
+          />
+          <p class="text-center font-silkscreen text-3xl text-kuning3">
+            grid size: <span>16</span>
+          </p>
         </div>
+      </div>
+
+      <!-- grid canvas -->
+      <div
+        class="container border border-white mx-auto mt-12 h-[600px] w-[600px] text-white grid grid-cols-[repeat(2,_2fr)] grid-rows-[repeat(2,_2fr)]"
+      >
+        <div class="border border-black bg-white">1</div>
+        <div class="border border-black bg-white">1</div>
+        <div class="border border-black bg-white">1</div>
+        <div class="border border-black bg-white">1</div>
+        
+      </div>
     </main>
 
     <footer></footer>
