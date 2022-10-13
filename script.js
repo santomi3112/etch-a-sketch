@@ -19,9 +19,31 @@ function createDefaultGrid() {
     div.classList.add("border");
     div.classList.add("border-black");
     div.classList.add("bg-white");
+    // add black bg moouseover
+    div.addEventListener('mouseover', e => {
+        e.target.style.backgroundColor = 'black';
+    })
     // add child to GRID
     GRID.appendChild(div);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 createDefaultGrid();
