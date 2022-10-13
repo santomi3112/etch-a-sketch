@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap"
       rel="stylesheet"
     />
+    <script src="script.js" defer></script>
   </head>
   <body class="bg-biru2">
     <header>
@@ -25,7 +26,7 @@
         etch a sketch :D
       </p>
       <!-- white bar under header -->
-      <div class="container mx-auto border border-white"></div>
+      <div class="container mx-auto border border-kuning3"></div>
     </header>
 
     <main>
@@ -55,22 +56,23 @@
             max="64"
             value="16"
             class="hover:bg-white active:bg-white focus:outline-none focus:ring focus:ring-kuning3"
+            data-slider
           />
           <p class="text-center font-silkscreen text-3xl text-kuning3">
-            grid size: <span>16</span>
+            grid size: <span data-slider-value>16</span>
           </p>
         </div>
       </div>
 
       <!-- grid canvas -->
       <div
-        class="container border border-white mx-auto mt-12 h-[600px] w-[600px] text-white grid grid-cols-[repeat(2,_2fr)] grid-rows-[repeat(2,_2fr)]"
+        class="shadow-red-900 shadow-[10px_10px_0_0] container border border-kuning3 mx-auto mt-12 h-[600px] w-[600px] grid grid-cols-[repeat(2,_2fr)] grid-rows-[repeat(2,_2fr)]"
+        data-grid
       >
+        <!-- <div class="border border-black bg-white">1</div>
         <div class="border border-black bg-white">1</div>
         <div class="border border-black bg-white">1</div>
-        <div class="border border-black bg-white">1</div>
-        <div class="border border-black bg-white">1</div>
-        
+        <div class="border border-black bg-white">1</div> -->
       </div>
     </main>
 
