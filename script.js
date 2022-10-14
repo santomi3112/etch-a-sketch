@@ -42,7 +42,7 @@ function removeChildren() {
 }
 
 // create grid based on slider
-slider.addEventListener("mouseup", () => {
+slider.addEventListener("change", () => {
   removeChildren()
   GRID.style.gridTemplateRows = `repeat(${slider.value}, 2fr)`;
   GRID.style.gridTemplateColumns = `repeat(${slider.value}, 2fr)`;
