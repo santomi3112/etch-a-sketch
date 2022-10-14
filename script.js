@@ -12,12 +12,6 @@ slider.addEventListener("input", () => {
   screenValue.textContent = val;
 });
 
-
-// create grid based on slider
-slider.addEventListener('mouseup', () => {
-
-})
-
 // create default grid value
 function createDefaultGrid() {
   // 16 x 16 = 256 grid value
@@ -39,23 +33,55 @@ function createDefaultGrid() {
 }
 // initiate default grid
 createDefaultGrid();
-const cell = document.querySelectorAll(".cell");
+
+// remove children
+function removeChildren() {
+  while (GRID.hasChildNodes()) {
+    GRID.removeChild(GRID.firstChild)
+  }
+}
+
+// create grid based on slider
+slider.addEventListener("mouseup", () => {
+  removeChildren()
+  GRID.style.gridTemplateRows = `repeat(${slider.value}, 2fr)`;
+  GRID.style.gridTemplateColumns = `repeat(${slider.value}, 2fr)`;
+  
+
+  let gridAll = slider.value * slider.value
+  for (let i = 0; i < gridAll; i++) {
+    const div = document.createElement("div");
+    // adding class to div
+    div.classList.add("border");
+    div.classList.add("border-black");
+    div.classList.add("bg-white");
+    div.classList.add("cell");
+
+    div.addEventListener("mouseover", (e) => {
+      e.target.style.backgroundColor = "black";
+    });
+
+    GRID.appendChild(div)
+  }
+});
 
 // create reset color button
 reset.addEventListener("click", () => {
-  cell.forEach(cell => {
-    cell.style.backgroundColor = "white"
+  const cell = document.querySelectorAll(".cell");
+  cell.forEach((cell) => {
+    cell.style.backgroundColor = "white";
   });
 });
 
 // create black color button
 black.addEventListener("click", () => {
-  cell.forEach(cell => {
-    cell.addEventListener('mouseover', e => {
+  const cell = document.querySelectorAll(".cell");
+  cell.forEach((cell) => {
+    cell.addEventListener("mouseover", (e) => {
       e.target.style.backgroundColor = "black";
-    })
+    });
   });
-})
+});
 
 // rainbow color function
 function randomColor() {
@@ -69,9 +95,10 @@ function randomColor() {
 
 // create rainbow color button
 rainbow.addEventListener("click", () => {
-  cell.forEach(cell => {
-    cell.addEventListener('mouseover', e => {
-      e.target.style.backgroundColor = randomColor()
-    })
+  const cell = document.querySelectorAll(".cell");
+  cell.forEach((cell) => {
+    cell.addEventListener("mouseover", (e) => {
+      e.target.style.backgroundColor = randomColor();
+    });
   });
-})
+});
