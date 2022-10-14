@@ -12,6 +12,12 @@ slider.addEventListener("input", () => {
   screenValue.textContent = val;
 });
 
+
+// create grid based on slider
+slider.addEventListener('mouseup', () => {
+
+})
+
 // create default grid value
 function createDefaultGrid() {
   // 16 x 16 = 256 grid value
@@ -37,10 +43,9 @@ const cell = document.querySelectorAll(".cell");
 
 // create reset color button
 reset.addEventListener("click", () => {
-  // the cell
-  let cell = GRID.children;
-  for (let i = 0; i <= GRID.children.length; i++)
-    [(cell[i].style.backgroundColor = "white")];
+  cell.forEach(cell => {
+    cell.style.backgroundColor = "white"
+  });
 });
 
 // create black color button
