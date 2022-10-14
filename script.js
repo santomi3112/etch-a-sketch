@@ -2,6 +2,8 @@ const GRID = document.querySelector("[data-grid]");
 const slider = document.querySelector("[data-slider]");
 const screenValue = document.querySelector("[data-slider-value]");
 const reset = document.querySelector("[data-reset]");
+const black = document.querySelector("[data-black]");
+const rainbow = document.querySelector("[data-rainbow]");
 
 // put slider value
 slider.addEventListener("input", () => {
@@ -20,6 +22,7 @@ function createDefaultGrid() {
     div.classList.add("border");
     div.classList.add("border-black");
     div.classList.add("bg-white");
+    div.classList.add("cell");
     // add black bg moouseover
     div.addEventListener("mouseover", (e) => {
       e.target.style.backgroundColor = "black";
@@ -28,6 +31,9 @@ function createDefaultGrid() {
     GRID.appendChild(div);
   }
 }
+// initiate default grid
+createDefaultGrid();
+const cell = document.querySelectorAll(".cell");
 
 // create reset color button
 reset.addEventListener("click", () => {
@@ -37,4 +43,30 @@ reset.addEventListener("click", () => {
     [(cell[i].style.backgroundColor = "white")];
 });
 
-createDefaultGrid();
+// create black color button
+black.addEventListener("click", () => {
+  cell.forEach(cell => {
+    cell.addEventListener('mouseover', e => {
+      e.target.style.backgroundColor = "black";
+    })
+  });
+})
+
+// rainbow color function
+function randomColor() {
+  let letters = "0123456789ABCDEF";
+  let color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+// create rainbow color button
+rainbow.addEventListener("click", () => {
+  cell.forEach(cell => {
+    cell.addEventListener('mouseover', e => {
+      e.target.style.backgroundColor = randomColor()
+    })
+  });
+})
