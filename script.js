@@ -4,6 +4,7 @@ const screenValue = document.querySelector("[data-slider-value]");
 const reset = document.querySelector("[data-reset]");
 const black = document.querySelector("[data-black]");
 const rainbow = document.querySelector("[data-rainbow]");
+const whiteBtn = document.querySelector('[data-white]')
 
 // put slider value
 slider.addEventListener("input", () => {
@@ -102,3 +103,13 @@ rainbow.addEventListener("click", () => {
     });
   });
 });
+
+// create white or erase color button
+whiteBtn.addEventListener("click", () => {
+  const cell = document.querySelectorAll(".cell");
+  cell.forEach((cell) => {
+    cell.addEventListener("mouseover", e => {
+      e.target.style.backgroundColor = "white"
+    })
+  })
+})
